@@ -35,7 +35,14 @@ public class bullets : MonoBehaviour {
         {
             Destroy(collision.gameObject);
         }
-        else
+        /*
+        if (collision.gameObject.CompareTag("Regular Fan") || collision.gameObject.CompareTag("Strong Fan") || collision.gameObject.CompareTag("Weaker Fan"))
+
+        { } //pass
+        */
+        if (collision.gameObject.CompareTag("Wall"))
+        {
             Destroy(gameObject);
+        }
     }
 }

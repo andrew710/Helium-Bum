@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Balloon_Script : MonoBehaviour {
-    public double helium;
+    public static double helium;
     public Text helium_text;
 
 
@@ -20,11 +20,19 @@ public class Balloon_Script : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (rbody.gravityScale <= 1)
-            rbody.gravityScale += (float)(0.25 * Time.deltaTime);
-        if (Input.GetKey(KeyCode.Space))
         {
-            helium += (10 * Time.deltaTime);
-            helium_text.text = "helium: " + System.Math.Truncate(helium * 100) / 100;
+            rbody.gravityScale += (float)(0.25 * Time.deltaTime);
+            if (helium >= 0)
+            {
+                helium -= (12 * Time.deltaTime);
+                helium_text.text = "Helium: " + System.Math.Truncate(helium * 100) / 100;
+            }
         }
+        if (helium < 0)
+        {
+            helium = 0;
+            helium_text.text = "Helium: " + System.Math.Truncate(helium * 100) / 100;
+        }
+
     }
 }

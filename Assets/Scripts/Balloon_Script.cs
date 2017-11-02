@@ -21,7 +21,6 @@ public class Balloon_Script : MonoBehaviour {
 	void Update () {
         if (rbody.gravityScale <= 1)
             rbody.gravityScale += (float)(0.25 * Time.deltaTime);
-
         if (Input.GetKey(KeyCode.Space))
         {
             helium += (10 * Time.deltaTime);

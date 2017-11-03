@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class Fan_Script : MonoBehaviour {
     public bool inside = false;
-    private Vector2 position;
     private GameObject balloon;
 
 	// Use this for initialization
 	void Start () {
         balloon = GameObject.FindGameObjectWithTag("Balloon");
-        position = new Vector2(-(transform.position.x), transform.position.y);
 	}
 	
 	// Update is called once per frame

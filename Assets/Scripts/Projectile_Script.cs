@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bullets : MonoBehaviour {
+public class Projectile_Script : MonoBehaviour {
     /*
     *add force to the bullet so it moves in a straight line
     *detect when it hits balloon and destroy the balloon *

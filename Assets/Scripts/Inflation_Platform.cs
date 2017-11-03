@@ -6,6 +6,7 @@ using UnityEngine;
 public class Inflation_Platform : MonoBehaviour {
 
     private Balloon_Script balloon;
+    private Rigidbody2D rbody;
     public static bool addHelium;
     public Text helium_text;
 
@@ -13,6 +14,7 @@ public class Inflation_Platform : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Balloon"))
         {
+            rbody = collision.gameObject.GetComponent<Rigidbody2D>();
             addHelium = true;
             Time.timeScale = 0; //pause game
         }
@@ -31,13 +33,14 @@ public class Inflation_Platform : MonoBehaviour {
             {
                 if (Input.GetKey(KeyCode.Space))
                 {
-                    Balloon_Script.helium += (10 * Time.deltaTime);
+                    Balloon_Script.helium += 0.5;
                     helium_text.text = "helium: " + System.Math.Truncate(Balloon_Script.helium * 100) / 100;
                 }
             }
             if (Input.GetKey(KeyCode.Return))
             {
                 Time.timeScale = 1;
+                rbody.gravityScale =(float)-0.5 * (float)(Balloon_Script.helium * 0.025);
             }
             }
 

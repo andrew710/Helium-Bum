@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class Balloon_Poppers : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Balloon"))
+        {
+            collision.gameObject.SetActive(false);
+        }
+    }
 }

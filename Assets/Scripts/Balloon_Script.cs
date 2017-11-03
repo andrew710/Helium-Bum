@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Balloon_Script : MonoBehaviour {
-    public static double helium;
+    public static double helium = 100;
     public Text helium_text;
 
 

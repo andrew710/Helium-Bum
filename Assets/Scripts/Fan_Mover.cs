@@ -2,22 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fan_Moving : MonoBehaviour
+public class Fan_Mover : MonoBehaviour
 {
 
     private bool hasInput;
     private Vector3 currentTouchPosition;
     private bool draggingItem;
     private Vector2 touchOffset;
-    public static bool moveable;
-    public Create_Fan fan;
+
 
     // Use this for initialization
     void Start()
     {
+        hasInput = false;
         currentTouchPosition = Input.mousePosition;
         draggingItem = false;
-        moveable = true;
     }
 
     // Update is called once per frame
@@ -25,10 +24,19 @@ public class Fan_Moving : MonoBehaviour
     {
         currentTouchPosition = Input.mousePosition;
         if (Input.GetMouseButtonDown(0))
-            drag_or_pickup();
+            hasInput = true;
+        else if (Input.GetMouseButtonUp(0))
+            hasInput = false;
 
-        if (draggingItem)
-            drop_item();
+
+        if (hasInput)
+            drag_or_pickup();
+        else
+        {
+            if (draggingItem)
+                drop_item();
+        }
+
     }
 
     void drag_or_pickup()
@@ -52,9 +60,7 @@ public class Fan_Moving : MonoBehaviour
 
     void drop_item()
     {
-        Vector3 RawinputPoint = Camera.main.ScreenToWorldPoint(currentTouchPosition);
-        Vector2 inputPoint = new Vector2(RawinputPoint.x, RawinputPoint.y);
         draggingItem = false;
-        fan.GetComponent<Create_Fan>().createFan(inputPoint, transform.rotation);
     }
+
 }

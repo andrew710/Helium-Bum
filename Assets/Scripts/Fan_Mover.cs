@@ -9,7 +9,9 @@ public class Fan_Mover : MonoBehaviour
     private Vector3 currentTouchPosition;
     private bool draggingItem;
     private Vector2 touchOffset;
-
+    private Vector3 currPosition;
+    private bool inside;
+    public static bool canMove = true;
 
     // Use this for initialization
     void Start()
@@ -17,26 +19,29 @@ public class Fan_Mover : MonoBehaviour
         hasInput = false;
         currentTouchPosition = Input.mousePosition;
         draggingItem = false;
+        currPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentTouchPosition = Input.mousePosition;
-        if (Input.GetMouseButtonDown(0))
-            hasInput = true;
-        else if (Input.GetMouseButtonUp(0))
-            hasInput = false;
-
-
-        if (hasInput)
-            drag_or_pickup();
-        else
+        if (canMove)
         {
-            if (draggingItem)
-                drop_item();
-        }
+            currentTouchPosition = Input.mousePosition;
+            if (Input.GetMouseButtonDown(0))
+                hasInput = true;
+            else if (Input.GetMouseButtonUp(0))
+                hasInput = false;
 
+
+            if (hasInput)
+                drag_or_pickup();
+            else
+            {
+                if (draggingItem)
+                    drop_item();
+            }
+        }
     }
 
     void drag_or_pickup()
@@ -61,6 +66,28 @@ public class Fan_Mover : MonoBehaviour
     void drop_item()
     {
         draggingItem = false;
+        if (!inside)
+        {
+            transform.position = currPosition;
+            print("no");
+        }
+        else
+        {
+            currPosition = transform.position;
+            print("yes");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+            inside = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+            inside = false;
     }
 
 }

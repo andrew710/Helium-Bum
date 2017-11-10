@@ -10,6 +10,7 @@ public class UI_Fan_Mover : MonoBehaviour
     private Vector3 startingPos;
     private bool draggingItem;
     private Vector2 touchOffset;
+    private bool inside = false;
     public GameObject fan;
     public GameObject fanHolder;
 
@@ -63,12 +64,27 @@ public class UI_Fan_Mover : MonoBehaviour
 
     void drop_item()
     {
-        Vector3 RawinputPoint = Camera.main.ScreenToWorldPoint(currentTouchPosition);
-        Vector2 inputPoint = new Vector2(RawinputPoint.x, RawinputPoint.y);
         draggingItem = false;
-        GameObject newFan = Instantiate(fan, inputPoint, transform.rotation) as GameObject;
-        newFan.transform.SetParent(fanHolder.GetComponent<Transform>());
+        if (inside)
+        {
+            Vector3 RawinputPoint = Camera.main.ScreenToWorldPoint(currentTouchPosition);
+            Vector2 inputPoint = new Vector2(RawinputPoint.x, RawinputPoint.y);
+            GameObject newFan = Instantiate(fan, inputPoint, transform.rotation) as GameObject;
+            newFan.transform.SetParent(fanHolder.GetComponent<Transform>());
+        }
         transform.position = startingPos;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+            inside = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+            inside = false;
     }
 
 }

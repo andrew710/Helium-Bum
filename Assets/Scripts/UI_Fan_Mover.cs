@@ -45,6 +45,14 @@ public class UI_Fan_Mover : MonoBehaviour
 
     void drag_or_pickup()
     {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            if (transform.eulerAngles.z + 180 > 180)
+                transform.Rotate(new Vector3(0, 0, -180));
+            else
+                transform.Rotate(new Vector3(0, 0, 180));
+        }
+
         Vector3 RawinputPoint = Camera.main.ScreenToWorldPoint(currentTouchPosition);
         Vector2 inputPoint = new Vector2(RawinputPoint.x, RawinputPoint.y);
         if (draggingItem)

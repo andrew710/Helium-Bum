@@ -8,7 +8,7 @@ public class Balloon_Poppers : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Balloon"))
         {
-            collision.gameObject.SetActive(false);
+            Destroy(collision.gameObject);
         }
     }
 }

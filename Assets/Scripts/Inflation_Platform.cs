@@ -29,18 +29,17 @@ public class Inflation_Platform : MonoBehaviour {
 	void Update () {
         if (addHelium)
         {
-            if (addHelium)
+            if (Input.GetKey(KeyCode.Space))
             {
-                if (Input.GetKey(KeyCode.Space))
-                {
-                    Balloon_Script.helium += 0.5;
-                    helium_text.text = "helium: " + System.Math.Truncate(Balloon_Script.helium * 100) / 100;
-                }
+                Balloon_Script.helium += 0.5;
+                helium_text.text = "helium: " + System.Math.Truncate(Balloon_Script.helium * 100) / 100;
             }
+            
             if (Input.GetKey(KeyCode.Return))
             {
                 Time.timeScale = 1;
                 rbody.gravityScale =(float)-0.5 * (float)(Balloon_Script.helium * 0.025);
+                addHelium = false;
             }
             }
 

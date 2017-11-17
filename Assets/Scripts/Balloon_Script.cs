@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Balloon_Script : MonoBehaviour {
-    public static double helium = 0;
+    public static double helium;
     public Text helium_text;
 
 
@@ -12,6 +12,7 @@ public class Balloon_Script : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        helium = 0;
         helium_text.text = "Helium: " + helium;
         rbody.GetComponent<Rigidbody2D>();
         rbody.gravityScale *= (float)(helium * 0.025);

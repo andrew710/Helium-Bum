@@ -11,9 +11,12 @@ public class Projectile_Script : MonoBehaviour {
     
     private GameObject cannon;
     private bool fired = false;
+    private GameObject deathScreen;
+    public static bool dead;
 
 	// Use this for initialization
 	void Start () {
+        dead = false;
         cannon = GameObject.FindGameObjectWithTag("Cannon");
 	}
 	
@@ -40,12 +43,9 @@ public class Projectile_Script : MonoBehaviour {
         if (collision.gameObject.CompareTag("Balloon"))
         {
             Destroy(collision.gameObject);
+            Time.timeScale = 0;
+            dead = true;
         }
-        /*
-        if (collision.gameObject.CompareTag("Regular Fan") || collision.gameObject.CompareTag("Strong Fan") || collision.gameObject.CompareTag("Weaker Fan"))
-
-        { } //pass
-        */
         if (collision.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);

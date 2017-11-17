@@ -11,7 +11,10 @@ public class UI_Fan_Mover : MonoBehaviour
     private bool draggingItem;
     private Vector2 touchOffset;
     private bool inside = false;
-    public GameObject fan;
+    private int type;
+    public GameObject rFan;
+    public GameObject wFan;
+    public GameObject sFan;
     public GameObject fanHolder;
 
     // Use this for initialization
@@ -64,6 +67,20 @@ public class UI_Fan_Mover : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(inputPoint, Vector2.zero);
             if (hit.collider != null && GetComponent<Collider2D>() == hit.collider)
             {
+                print(hit.collider.tag);
+                if(hit.collider.CompareTag("Regular Fan"))
+                {
+                    type = 2;
+                }
+                else if (hit.collider.CompareTag("Weaker Fan"))
+                {
+                    type = 1;
+                }
+                else if (hit.collider.CompareTag("Strong Fan"))
+                {
+                    type = 3;
+                }
+
                 draggingItem = true;
                 touchOffset = (Vector2)transform.position - inputPoint;
             }
@@ -77,7 +94,15 @@ public class UI_Fan_Mover : MonoBehaviour
         {
             Vector3 RawinputPoint = Camera.main.ScreenToWorldPoint(currentTouchPosition);
             Vector2 inputPoint = new Vector2(RawinputPoint.x, RawinputPoint.y);
-            GameObject newFan = Instantiate(fan, inputPoint, transform.rotation) as GameObject;
+
+            GameObject newFan = null;
+            if(type == 1)
+                newFan = Instantiate(wFan, inputPoint, transform.rotation) as GameObject;
+            else if (type == 2)
+                newFan = Instantiate(rFan, inputPoint, transform.rotation) as GameObject;
+            else if (type == 3)
+                newFan = Instantiate(sFan, inputPoint, transform.rotation) as GameObject;
+
             newFan.transform.SetParent(fanHolder.GetComponent<Transform>());
         }
         transform.position = startingPos;

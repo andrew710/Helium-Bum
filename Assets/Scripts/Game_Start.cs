@@ -7,6 +7,8 @@ public class Game_Start : MonoBehaviour {
     private Balloon_Script balloon;
     private Rigidbody2D rbody;
     private bool canAdd = true;
+    private GameObject deathScreen;
+    private GameObject pauseScreen;
     public GameObject ui;
     public Text helium_text;
     public static int money;
@@ -15,6 +17,12 @@ public class Game_Start : MonoBehaviour {
     void Start () {
         ui = GameObject.FindGameObjectWithTag("UI");
         rbody = GameObject.FindGameObjectWithTag("Balloon").GetComponent<Rigidbody2D>();
+
+        deathScreen = GameObject.FindGameObjectWithTag("Dead");
+        deathScreen.SetActive(false);
+
+        pauseScreen = GameObject.FindGameObjectWithTag("Pause");
+        pauseScreen.SetActive(false);
 
         Time.timeScale = 0.0005f;
         Time.fixedDeltaTime = 0.00015f;
@@ -25,6 +33,24 @@ public class Game_Start : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Projectile_Script.dead)
+            deathScreen.SetActive(true);
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (pauseScreen.activeSelf)
+            {
+                Time.timeScale = 1;
+                pauseScreen.SetActive(false);
+            }
+            else
+            {
+                Time.timeScale = 0;
+                pauseScreen.SetActive(true);
+            }
+                
+        }
+
         if (canAdd)
         {
             if (Input.GetKey(KeyCode.Space))

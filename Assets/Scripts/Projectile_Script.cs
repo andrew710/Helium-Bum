@@ -10,6 +10,7 @@ public class Projectile_Script : MonoBehaviour {
     */
     
     private GameObject cannon;
+    private bool fired = false;
 
 	// Use this for initialization
 	void Start () {
@@ -18,13 +19,18 @@ public class Projectile_Script : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        if(cannon.transform.rotation.z == 0)    //facing right
+        if (!fired)
         {
-            GetComponent<Rigidbody2D>().AddForce(Vector2.right * 10);
-        }
-        else if (cannon.transform.rotation.z == 180 || cannon.transform.rotation.z == -180)
-        {
-            GetComponent<Rigidbody2D>().AddForce(Vector2.left * 10);
+            if (cannon.transform.rotation.z == 0)    //facing right
+            {
+                GetComponent<Rigidbody2D>().AddForce(Vector2.right * 800);
+                fired = true;
+            }
+            else if (cannon.transform.rotation.z == 180 || cannon.transform.rotation.z == -180)
+            {
+                GetComponent<Rigidbody2D>().AddForce(Vector2.left * 800);
+                fired = true;
+            }
         }
 	}
 

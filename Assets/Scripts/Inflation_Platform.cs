@@ -32,7 +32,7 @@ public class Inflation_Platform : MonoBehaviour {
             if (Input.GetKey(KeyCode.Space))
             {
                 Balloon_Script.helium += 0.5;
-                helium_text.text = "helium: " + System.Math.Truncate(Balloon_Script.helium * 100) / 100;
+                helium_text.text = "Helium: " + System.Math.Truncate(Balloon_Script.helium * 100) / 100;
             }
             
             if (Input.GetKey(KeyCode.Return))

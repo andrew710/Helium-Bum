@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Balloon_Script : MonoBehaviour {
     public static double helium;
     public Text helium_text;
-
+    public static int currency = 100;
 
     public Rigidbody2D rbody;
 

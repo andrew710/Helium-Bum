@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_Fan_Mover : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class UI_Fan_Mover : MonoBehaviour
     public GameObject wFan;
     public GameObject sFan;
     public GameObject fanHolder;
+
+    public Text curr;
 
     // Use this for initialization
     void Start()
@@ -96,12 +99,24 @@ public class UI_Fan_Mover : MonoBehaviour
             Vector2 inputPoint = new Vector2(RawinputPoint.x, RawinputPoint.y);
 
             GameObject newFan = null;
-            if(type == 1)
+            if (type == 1)
+            {
                 newFan = Instantiate(wFan, inputPoint, transform.rotation) as GameObject;
+                Balloon_Script.currency -= 10;
+                curr.text = Balloon_Script.currency + " coins";
+            }
             else if (type == 2)
+            {
                 newFan = Instantiate(rFan, inputPoint, transform.rotation) as GameObject;
+                Balloon_Script.currency -= 25;
+                curr.text = Balloon_Script.currency + " coins";
+            }
             else if (type == 3)
+            {
                 newFan = Instantiate(sFan, inputPoint, transform.rotation) as GameObject;
+                Balloon_Script.currency -= 50;
+                curr.text = Balloon_Script.currency + " coins";
+            }
 
             newFan.transform.SetParent(fanHolder.GetComponent<Transform>());
         }

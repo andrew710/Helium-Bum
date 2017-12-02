@@ -1,0 +1,832 @@
+fileFormatVersion: 2
+guid: b6fb86b9f9014b34ab85a55f7b3c63db
+timeCreated: 1512255367
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: HB Blow Up Spritesheet_0
+    21300002: HB Blow Up Spritesheet_1
+    21300004: HB Blow Up Spritesheet_2
+    21300006: HB Blow Up Spritesheet_3
+    21300008: HB Blow Up Spritesheet_4
+    21300010: HB Blow Up Spritesheet_5
+    21300012: HB Blow Up Spritesheet_6
+    21300014: HB Blow Up Spritesheet_7
+    21300016: HB Blow Up Spritesheet_8
+    21300018: HB Blow Up Spritesheet_9
+    21300020: HB Blow Up Spritesheet_10
+    21300022: HB Blow Up Spritesheet_11
+    21300024: HB Blow Up Spritesheet_12
+    21300026: HB Blow Up Spritesheet_13
+    21300028: HB Blow Up Spritesheet_14
+    21300030: HB Blow Up Spritesheet_15
+    21300032: HB Blow Up Spritesheet_16
+    21300034: HB Blow Up Spritesheet_17
+    21300036: HB Blow Up Spritesheet_18
+    21300038: HB Blow Up Spritesheet_19
+    21300040: HB Blow Up Spritesheet_20
+    21300042: HB Blow Up Spritesheet_21
+    21300044: HB Blow Up Spritesheet_22
+    21300046: HB Blow Up Spritesheet_23
+    21300048: HB Blow Up Spritesheet_24
+    21300050: HB Blow Up Spritesheet_25
+    21300052: HB Blow Up Spritesheet_26
+    21300054: HB Blow Up Spritesheet_27
+    21300056: HB Blow Up Spritesheet_28
+    21300058: HB Blow Up Spritesheet_29
+    21300060: HB Blow Up Spritesheet_30
+    21300062: HB Blow Up Spritesheet_31
+    21300064: HB Blow Up Spritesheet_32
+    21300066: HB Blow Up Spritesheet_33
+    21300068: HB Blow Up Spritesheet_34
+    21300070: HB Blow Up Spritesheet_35
+    21300072: HB Blow Up Spritesheet_36
+    21300074: HB Blow Up Spritesheet_37
+    21300076: HB Blow Up Spritesheet_38
+    21300078: HB Blow Up Spritesheet_39
+    21300080: HB Blow Up Spritesheet_40
+    21300082: HB Blow Up Spritesheet_41
+    21300084: HB Blow Up Spritesheet_42
+    21300086: HB Blow Up Spritesheet_43
+    21300088: HB Blow Up Spritesheet_44
+    21300090: HB Blow Up Spritesheet_45
+    21300092: HB Blow Up Spritesheet_46
+    21300094: HB Blow Up Spritesheet_47
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7298
+        width: 1413
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 7298
+        width: 1416
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 2817
+        y: 7298
+        width: 1416
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 4227
+        y: 7298
+        width: 1416
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 5637
+        y: 7298
+        width: 1416
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 7047
+        y: 7298
+        width: 1416
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 8457
+        y: 7298
+        width: 1416
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 9867
+        y: 7298
+        width: 1413
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5838
+        width: 1413
+        height: 1413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 5838
+        width: 1416
+        height: 1413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 2817
+        y: 5838
+        width: 1416
+        height: 1413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 4227
+        y: 5838
+        width: 1416
+        height: 1413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 5637
+        y: 5838
+        width: 1416
+        height: 1413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 7047
+        y: 5838
+        width: 1416
+        height: 1416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 8457
+        y: 5838
+        width: 1416
+        height: 1416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 9867
+        y: 5838
+        width: 1413
+        height: 1416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4379
+        width: 1413
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 4379
+        width: 1416
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 2817
+        y: 4379
+        width: 1416
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 4227
+        y: 4379
+        width: 1416
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 5637
+        y: 4379
+        width: 1416
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 7047
+        y: 4379
+        width: 1416
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 8457
+        y: 4379
+        width: 1416
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 9867
+        y: 4379
+        width: 1413
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2919
+        width: 1413
+        height: 1413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 2919
+        width: 1416
+        height: 1413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 2817
+        y: 2919
+        width: 1416
+        height: 1413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 4227
+        y: 2919
+        width: 1416
+        height: 1413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 5637
+        y: 2919
+        width: 1416
+        height: 1413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 7047
+        y: 2919
+        width: 1416
+        height: 1413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 8457
+        y: 2919
+        width: 1416
+        height: 1416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 9867
+        y: 2919
+        width: 1413
+        height: 1416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1457
+        width: 1413
+        height: 1418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 1457
+        width: 1416
+        height: 1418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 2817
+        y: 1457
+        width: 1416
+        height: 1418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 4227
+        y: 1457
+        width: 1416
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 5637
+        y: 1457
+        width: 1416
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 7047
+        y: 1457
+        width: 1416
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 8457
+        y: 1457
+        width: 1416
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 9867
+        y: 1457
+        width: 1413
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1413
+        height: 1413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 0
+        width: 1416
+        height: 1413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 2817
+        y: 0
+        width: 1416
+        height: 1413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 4227
+        y: 0
+        width: 1416
+        height: 1413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 5637
+        y: 0
+        width: 1416
+        height: 1413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 7047
+        y: 0
+        width: 1416
+        height: 1413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 8457
+        y: 0
+        width: 1416
+        height: 1413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: HB Blow Up Spritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 9867
+        y: 0
+        width: 1413
+        height: 1413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

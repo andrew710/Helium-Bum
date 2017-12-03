@@ -56,13 +56,13 @@ public class Game_Start : MonoBehaviour {
             if (Input.GetKey(KeyCode.Space))
             {
                 Balloon_Script.helium += 0.5;
-                helium_text.text = "helium: " + System.Math.Truncate(Balloon_Script.helium * 100) / 100;
+                helium_text.text = "Helium: " + System.Math.Truncate(Balloon_Script.helium * 100) / 100;
             }
 
             if (Input.GetKey(KeyCode.Return))
             {
                 ui.SetActive(false);
-                Time.timeScale = 1;
+                Time.timeScale = 2;
                 Time.fixedDeltaTime = 0.02f;
                 rbody.gravityScale = (float)-0.5 * (float)(Balloon_Script.helium * 0.025);
                 Fan_Mover.canMove = false;

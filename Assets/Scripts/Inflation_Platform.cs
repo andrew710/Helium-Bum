@@ -37,7 +37,7 @@ public class Inflation_Platform : MonoBehaviour {
             
             if (Input.GetKey(KeyCode.Return))
             {
-                Time.timeScale = 1;
+                Time.timeScale = 2;
                 rbody.gravityScale =(float)-0.5 * (float)(Balloon_Script.helium * 0.025);
                 addHelium = false;
             }

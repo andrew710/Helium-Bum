@@ -51,18 +51,18 @@ public class UI_Fan_Mover : MonoBehaviour
 
     void drag_or_pickup()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            if (transform.eulerAngles.z + 180 > 180)
-                transform.Rotate(new Vector3(0, 0, -180));
-            else
-                transform.Rotate(new Vector3(0, 0, 180));
-        }
 
         Vector3 RawinputPoint = Camera.main.ScreenToWorldPoint(currentTouchPosition);
         Vector2 inputPoint = new Vector2(RawinputPoint.x, RawinputPoint.y);
         if (draggingItem)
         {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                if (transform.eulerAngles.z + 180 > 180)
+                    transform.Rotate(new Vector3(0, 0, -180));
+                else
+                    transform.Rotate(new Vector3(0, 0, 180));
+            }
             transform.position = inputPoint + touchOffset;
         }
         else
@@ -70,7 +70,7 @@ public class UI_Fan_Mover : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(inputPoint, Vector2.zero);
             if (hit.collider != null && GetComponent<Collider2D>() == hit.collider)
             {
-                print(hit.collider.tag);
+               
                 if(hit.collider.CompareTag("Regular Fan"))
                 {
                     type = 2;
@@ -136,7 +136,6 @@ public class UI_Fan_Mover : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Wall"))
             inside = true;
-        print("hi");
     }
 
     private void OnTriggerExit2D(Collider2D collision)

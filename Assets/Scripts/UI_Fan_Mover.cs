@@ -136,6 +136,7 @@ public class UI_Fan_Mover : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Wall"))
             inside = true;
+        print("hi");
     }
 
     private void OnTriggerExit2D(Collider2D collision)

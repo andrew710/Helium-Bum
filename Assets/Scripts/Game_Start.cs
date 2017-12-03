@@ -62,7 +62,7 @@ public class Game_Start : MonoBehaviour {
             if (Input.GetKey(KeyCode.Return))
             {
                 ui.SetActive(false);
-                Time.timeScale = 1;
+                Time.timeScale = 2;
                 Time.fixedDeltaTime = 0.02f;
                 rbody.gravityScale = (float)-0.5 * (float)(Balloon_Script.helium * 0.025);
                 Fan_Mover.canMove = false;

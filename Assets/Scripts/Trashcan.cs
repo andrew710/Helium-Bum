@@ -20,7 +20,7 @@ public class Trashcan : MonoBehaviour {
             Balloon_Script.currency += 25;
             curr.text = Balloon_Script.currency + " coins";
         }
-        else if(collision.gameObject.CompareTag("Weak Fan"))
+        else if(collision.gameObject.CompareTag("Weaker Fan"))
         {
             Destroy(collision.gameObject);
             Balloon_Script.currency += 25;

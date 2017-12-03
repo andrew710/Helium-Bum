@@ -17,6 +17,8 @@ public class UI_Fan_Mover : MonoBehaviour
     public GameObject wFan;
     public GameObject sFan;
     public GameObject fanHolder;
+    public static bool moving;
+    private bool inUse = false;
 
     public Text curr;
 
@@ -54,23 +56,29 @@ public class UI_Fan_Mover : MonoBehaviour
 
         Vector3 RawinputPoint = Camera.main.ScreenToWorldPoint(currentTouchPosition);
         Vector2 inputPoint = new Vector2(RawinputPoint.x, RawinputPoint.y);
+        moving = true;
         if (draggingItem)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (inUse && moving)
             {
-                if (transform.eulerAngles.z + 180 > 180)
-                    transform.Rotate(new Vector3(0, 0, -180));
-                else
-                    transform.Rotate(new Vector3(0, 0, 180));
+                if (Input.GetKeyDown(KeyCode.LeftShift))
+                {
+                    if (transform.eulerAngles.z + 180 > 180)
+                        transform.Rotate(0, 0, -180);
+                    else
+                        transform.Rotate(0, 0, 180);
+
+                }
+                transform.position = inputPoint + touchOffset;
             }
-            transform.position = inputPoint + touchOffset;
         }
         else
         {
             RaycastHit2D hit = Physics2D.Raycast(inputPoint, Vector2.zero);
-            if (hit.collider != null && GetComponent<Collider2D>() == hit.collider)
+
+            if (hit.collider != null && gameObject.GetComponent<Collider2D>() == hit.collider)
             {
-               
+                inUse = true;
                 if(hit.collider.CompareTag("Regular Fan"))
                 {
                     type = 2;
@@ -87,6 +95,7 @@ public class UI_Fan_Mover : MonoBehaviour
                 draggingItem = true;
                 touchOffset = (Vector2)transform.position - inputPoint;
             }
+            
         }
     }
 
@@ -97,6 +106,8 @@ public class UI_Fan_Mover : MonoBehaviour
         {
             Vector3 RawinputPoint = Camera.main.ScreenToWorldPoint(currentTouchPosition);
             Vector2 inputPoint = new Vector2(RawinputPoint.x, RawinputPoint.y);
+            inUse = false;
+            moving = false;
 
             GameObject newFan = null;
             if (type == 1)
@@ -107,6 +118,8 @@ public class UI_Fan_Mover : MonoBehaviour
                     Balloon_Script.currency -= 10;
                     curr.text = Balloon_Script.currency + " coins";
                 }
+                else
+                    return;
             }
             else if (type == 2)
             {
@@ -116,6 +129,8 @@ public class UI_Fan_Mover : MonoBehaviour
                     Balloon_Script.currency -= 25;
                     curr.text = Balloon_Script.currency + " coins";
                 }
+                else
+                    return;
             }
             else if (type == 3)
             {
@@ -125,11 +140,14 @@ public class UI_Fan_Mover : MonoBehaviour
                     Balloon_Script.currency -= 50;
                     curr.text = Balloon_Script.currency + " coins";
                 }
+                else
+                    return;
             }
 
             newFan.transform.SetParent(fanHolder.GetComponent<Transform>());
         }
         transform.position = startingPos;
+        transform.rotation.Set(0,0,0,0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

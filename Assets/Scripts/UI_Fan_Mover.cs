@@ -101,21 +101,30 @@ public class UI_Fan_Mover : MonoBehaviour
             GameObject newFan = null;
             if (type == 1)
             {
-                newFan = Instantiate(wFan, inputPoint, transform.rotation) as GameObject;
-                Balloon_Script.currency -= 10;
-                curr.text = Balloon_Script.currency + " coins";
+                if (Balloon_Script.currency - 10 >= 0)
+                {
+                    newFan = Instantiate(wFan, inputPoint, transform.rotation) as GameObject;
+                    Balloon_Script.currency -= 10;
+                    curr.text = Balloon_Script.currency + " coins";
+                }
             }
             else if (type == 2)
             {
-                newFan = Instantiate(rFan, inputPoint, transform.rotation) as GameObject;
-                Balloon_Script.currency -= 25;
-                curr.text = Balloon_Script.currency + " coins";
+                if (Balloon_Script.currency - 25 >= 0)
+                {
+                    newFan = Instantiate(rFan, inputPoint, transform.rotation) as GameObject;
+                    Balloon_Script.currency -= 25;
+                    curr.text = Balloon_Script.currency + " coins";
+                }
             }
             else if (type == 3)
             {
-                newFan = Instantiate(sFan, inputPoint, transform.rotation) as GameObject;
-                Balloon_Script.currency -= 50;
-                curr.text = Balloon_Script.currency + " coins";
+                if (Balloon_Script.currency - 50 >= 0)
+                {
+                    newFan = Instantiate(sFan, inputPoint, transform.rotation) as GameObject;
+                    Balloon_Script.currency -= 50;
+                    curr.text = Balloon_Script.currency + " coins";
+                }
             }
 
             newFan.transform.SetParent(fanHolder.GetComponent<Transform>());

@@ -33,7 +33,6 @@ public class Fan_Mover : MonoBehaviour
             else if (Input.GetMouseButtonUp(0))
                 hasInput = false;
 
-
             if (hasInput)
                 drag_or_pickup();
             else

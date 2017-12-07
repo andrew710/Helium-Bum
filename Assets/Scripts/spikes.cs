@@ -4,25 +4,17 @@ using UnityEngine;
 
 public class spikes : MonoBehaviour {
 
-    bool inRange = false;
-    private GameObject bal;
+    public static bool dead = false;
 
     //Balloon(or other object) hits the spikes
     private void OnTriggerEnter2D(Collider2D balloon)
     {
-        inRange = true;
+        if (balloon.gameObject.tag == "Balloon")
+        {
+            Destroy(balloon.gameObject);
+            Time.timeScale = 0;
+            Projectile_Script.dead = true;
+        }
     }
 
-    // Use this for initialization
-    void Start () {
-		bal = GameObject.FindGameObjectWithTag("Balloon");
-    }
-	
-	// Update is called once per frame
-	void Update () {
-		if (inRange == true)
-        {
-            Destroy(bal);
-        }
-	}
 }

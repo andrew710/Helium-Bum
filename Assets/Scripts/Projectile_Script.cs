@@ -24,12 +24,12 @@ public class Projectile_Script : MonoBehaviour {
 	void FixedUpdate () {
         if (!fired)
         {
-            if (cannon.transform.rotation.z == 0)    //facing right
+            if (!cannon.GetComponent<SpriteRenderer>().flipX)    //facing right
             {
                 GetComponent<Rigidbody2D>().AddForce(Vector2.right * 800);
                 fired = true;
             }
-            else if (cannon.transform.rotation.z == 180 || cannon.transform.rotation.z == -180)
+            else if (cannon.GetComponent<SpriteRenderer>().flipX)
             {
                 GetComponent<Rigidbody2D>().AddForce(Vector2.left * 800);
                 fired = true;

@@ -25,7 +25,7 @@ public class Game_Start : MonoBehaviour {
         pauseScreen.SetActive(false);
 
         Time.timeScale = 0.0005f;
-        Time.fixedDeltaTime = 0.00015f;
+        Time.fixedDeltaTime = 0.0002f;
         Fan_Mover.canMove = true;
         
         ui.SetActive(true);

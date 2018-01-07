@@ -17,8 +17,6 @@ public class UI_Fan_Mover : MonoBehaviour
     public GameObject wFan;
     public GameObject sFan;
     public GameObject fanHolder;
-    public static bool moving;
-    private bool inUse = false;
 
     public Text curr;
 
@@ -34,19 +32,22 @@ public class UI_Fan_Mover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentTouchPosition = Input.mousePosition;
-        if (Input.GetMouseButtonDown(0))
-            hasInput = true;
-        else if (Input.GetMouseButtonUp(0))
-            hasInput = false;
-
-
-        if (hasInput)
-            drag_or_pickup();
-        else
+        if (Balloon_Script.currency > 0)
         {
-            if (draggingItem)
-                drop_item();
+            currentTouchPosition = Input.mousePosition;
+            if (Input.GetMouseButtonDown(0))
+                hasInput = true;
+            else if (Input.GetMouseButtonUp(0))
+                hasInput = false;
+
+
+            if (hasInput)
+                drag_or_pickup();
+            else
+            {
+                if (draggingItem)
+                    drop_item();
+            }
         }
 
     }
@@ -56,11 +57,8 @@ public class UI_Fan_Mover : MonoBehaviour
 
         Vector3 RawinputPoint = Camera.main.ScreenToWorldPoint(currentTouchPosition);
         Vector2 inputPoint = new Vector2(RawinputPoint.x, RawinputPoint.y);
-        moving = true;
         if (draggingItem)
         {
-            if (inUse && moving)
-            {
                 if (Input.GetKeyDown(KeyCode.LeftShift))
                 {
                     if (transform.eulerAngles.z + 180 > 180)
@@ -70,7 +68,6 @@ public class UI_Fan_Mover : MonoBehaviour
 
                 }
                 transform.position = inputPoint + touchOffset;
-            }
         }
         else
         {
@@ -78,7 +75,6 @@ public class UI_Fan_Mover : MonoBehaviour
 
             if (hit.collider != null && gameObject.GetComponent<Collider2D>() == hit.collider)
             {
-                inUse = true;
                 if(hit.collider.CompareTag("Regular Fan"))
                 {
                     type = 2;
@@ -106,45 +102,42 @@ public class UI_Fan_Mover : MonoBehaviour
         {
             Vector3 RawinputPoint = Camera.main.ScreenToWorldPoint(currentTouchPosition);
             Vector2 inputPoint = new Vector2(RawinputPoint.x, RawinputPoint.y);
-            inUse = false;
-            moving = false;
 
             GameObject newFan = null;
-            if (type == 1)
-            {
-                if (Balloon_Script.currency - 10 >= 0)
-                {
-                    newFan = Instantiate(wFan, inputPoint, transform.rotation) as GameObject;
-                    Balloon_Script.currency -= 10;
-                    curr.text = Balloon_Script.currency + " coins";
-                }
-                else
-                    return;
-            }
-            else if (type == 2)
-            {
-                if (Balloon_Script.currency - 25 >= 0)
-                {
-                    newFan = Instantiate(rFan, inputPoint, transform.rotation) as GameObject;
-                    Balloon_Script.currency -= 25;
-                    curr.text = Balloon_Script.currency + " coins";
-                }
-                else
-                    return;
-            }
-            else if (type == 3)
-            {
-                if (Balloon_Script.currency - 50 >= 0)
-                {
-                    newFan = Instantiate(sFan, inputPoint, transform.rotation) as GameObject;
-                    Balloon_Script.currency -= 50;
-                    curr.text = Balloon_Script.currency + " coins";
-                }
-                else
-                    return;
-            }
-
-            newFan.transform.SetParent(fanHolder.GetComponent<Transform>());
+            switch (type) {
+                case 1: 
+                    {
+                        if (Balloon_Script.currency - 10 >= 0)
+                        {
+                            newFan = Instantiate(wFan, inputPoint, transform.rotation) as GameObject;
+                            Balloon_Script.currency -= 10;
+                            curr.text = Balloon_Script.currency + " coins";
+                        }
+                        break;
+                    }
+                case 2:
+                    {
+                        if (Balloon_Script.currency - 25 >= 0)
+                        {
+                            newFan = Instantiate(rFan, inputPoint, transform.rotation) as GameObject;
+                            Balloon_Script.currency -= 25;
+                            curr.text = Balloon_Script.currency + " coins";
+                        }
+                        break;
+                    }
+                case 3:
+                    {
+                        if (Balloon_Script.currency - 50 >= 0)
+                        {
+                            newFan = Instantiate(sFan, inputPoint, transform.rotation) as GameObject;
+                            Balloon_Script.currency -= 50;
+                            curr.text = Balloon_Script.currency + " coins";
+                        }
+                        break;
+                    }
+        }
+            if (newFan != null)
+                newFan.transform.SetParent(fanHolder.GetComponent<Transform>());
         }
         transform.position = startingPos;
         transform.rotation.Set(0,0,0,0);

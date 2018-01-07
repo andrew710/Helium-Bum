@@ -61,7 +61,9 @@ public class Fan_Mover : MonoBehaviour
         }
         else
         {
-            RaycastHit2D hit = Physics2D.Raycast(inputPoint, Vector2.zero);
+            int layermask = 1 << 8;
+            layermask = ~layermask;
+            RaycastHit2D hit = Physics2D.Raycast(inputPoint, Vector2.zero, 0f,layermask);
             if (hit.collider != null && GetComponent<Collider2D>() == hit.collider)
             {
                 draggingItem = true;

@@ -14,23 +14,28 @@ public class Trashcan : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Regular Fan"))
-        {
-            Destroy(collision.gameObject);
-            Balloon_Script.currency += 25;
-            curr.text = Balloon_Script.currency + " coins";
-        }
-        else if(collision.gameObject.CompareTag("Weaker Fan"))
-        {
-            Destroy(collision.gameObject);
-            Balloon_Script.currency += 25;
-            curr.text = Balloon_Script.currency + " coins";
-        }
-        else if(collision.gameObject.CompareTag("Strong Fan"))
-        {
-            Destroy(collision.gameObject);
-            Balloon_Script.currency += 50;
-            curr.text = Balloon_Script.currency + " coins";
-        }
+        if (transform.parent == collision.transform.parent)
+            return;
+
+            if (collision.gameObject.CompareTag("Regular Fan"))
+            {
+                Destroy(collision.gameObject);
+                Balloon_Script.currency += 25;
+                curr.text = Balloon_Script.currency + " coins";
+            }
+            else if (collision.gameObject.CompareTag("Weaker Fan"))
+            {
+                Destroy(collision.gameObject);
+                Balloon_Script.currency += 10;
+                curr.text = Balloon_Script.currency + " coins";
+            }
+            else if (collision.gameObject.CompareTag("Strong Fan"))
+            {
+                Destroy(collision.gameObject);
+                Balloon_Script.currency += 50;
+                curr.text = Balloon_Script.currency + " coins";
+            }
+        
     }
+
 }

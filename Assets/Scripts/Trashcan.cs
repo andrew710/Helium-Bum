@@ -20,19 +20,19 @@ public class Trashcan : MonoBehaviour {
             if (collision.gameObject.CompareTag("Regular Fan"))
             {
                 Destroy(collision.gameObject);
-                Balloon_Script.currency += 25;
+                Balloon_Script.currency += 30/2;
                 curr.text = Balloon_Script.currency + " coins";
             }
             else if (collision.gameObject.CompareTag("Weaker Fan"))
             {
                 Destroy(collision.gameObject);
-                Balloon_Script.currency += 10;
+                Balloon_Script.currency += 10/2;
                 curr.text = Balloon_Script.currency + " coins";
             }
             else if (collision.gameObject.CompareTag("Strong Fan"))
             {
                 Destroy(collision.gameObject);
-                Balloon_Script.currency += 50;
+                Balloon_Script.currency += 50/2;
                 curr.text = Balloon_Script.currency + " coins";
             }
         

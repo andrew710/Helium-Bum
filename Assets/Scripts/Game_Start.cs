@@ -62,9 +62,11 @@ public class Game_Start : MonoBehaviour {
             if (Input.GetKey(KeyCode.Return))
             {
                 ui.SetActive(false);
-                Time.timeScale = 2;
+                Time.timeScale = 1;
                 Time.fixedDeltaTime = 0.02f;
-                rbody.gravityScale = (float)-0.5 * (float)(Balloon_Script.helium * 0.025);
+                rbody.gravityScale = (float)-0.5 * (float)(Balloon_Script.helium * 0.05);
+                if (rbody.gravityScale < -1.25f)
+                    rbody.gravityScale = -1.25f;
                 Fan_Mover.canMove = false;
                 canAdd = false;
             }

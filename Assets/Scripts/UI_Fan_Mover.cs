@@ -9,6 +9,7 @@ public class UI_Fan_Mover : MonoBehaviour
     private bool hasInput;
     private Vector3 currentTouchPosition;
     private Vector3 startingPos;
+    private Quaternion startingRot;
     private bool draggingItem;
     private Vector2 touchOffset;
     private bool inside = false;
@@ -27,6 +28,7 @@ public class UI_Fan_Mover : MonoBehaviour
         currentTouchPosition = Input.mousePosition;
         draggingItem = false;
         startingPos = transform.position;
+        startingRot = transform.rotation;
     }
 
     // Update is called once per frame
@@ -36,7 +38,7 @@ public class UI_Fan_Mover : MonoBehaviour
         {
             currentTouchPosition = Input.mousePosition;
             if (Input.GetMouseButtonDown(0))
-                hasInput = true;
+                drag_or_pickup();
             else if (Input.GetMouseButtonUp(0))
                 hasInput = false;
 
@@ -54,18 +56,14 @@ public class UI_Fan_Mover : MonoBehaviour
 
     void drag_or_pickup()
     {
-
+        
         Vector3 RawinputPoint = Camera.main.ScreenToWorldPoint(currentTouchPosition);
         Vector2 inputPoint = new Vector2(RawinputPoint.x, RawinputPoint.y);
         if (draggingItem)
         {
-                if (Input.GetKeyDown(KeyCode.LeftShift))
+                if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
                 {
-                    if (transform.eulerAngles.z + 180 > 180)
-                        transform.Rotate(0, 0, -180);
-                    else
-                        transform.Rotate(0, 0, 180);
-
+                    transform.localScale = new Vector3(transform.localScale.x*-1, transform.localScale.y, transform.localScale.z);
                 }
                 transform.position = inputPoint + touchOffset;
         }
@@ -75,7 +73,7 @@ public class UI_Fan_Mover : MonoBehaviour
 
             if (hit.collider != null && gameObject.GetComponent<Collider2D>() == hit.collider)
             {
-                if(hit.collider.CompareTag("Regular Fan"))
+                if (hit.collider.CompareTag("Regular Fan"))
                 {
                     type = 2;
                 }
@@ -88,9 +86,12 @@ public class UI_Fan_Mover : MonoBehaviour
                     type = 3;
                 }
 
+                hasInput = true;
                 draggingItem = true;
                 touchOffset = (Vector2)transform.position - inputPoint;
             }
+            else
+                hasInput = false;
             
         }
     }
@@ -117,10 +118,10 @@ public class UI_Fan_Mover : MonoBehaviour
                     }
                 case 2:
                     {
-                        if (Balloon_Script.currency - 25 >= 0)
+                        if (Balloon_Script.currency - 30 >= 0)
                         {
                             newFan = Instantiate(rFan, inputPoint, transform.rotation) as GameObject;
-                            Balloon_Script.currency -= 25;
+                            Balloon_Script.currency -= 30;
                             curr.text = Balloon_Script.currency + " coins";
                         }
                         break;
@@ -137,10 +138,17 @@ public class UI_Fan_Mover : MonoBehaviour
                     }
         }
             if (newFan != null)
+            {
                 newFan.transform.SetParent(fanHolder.GetComponent<Transform>());
+                newFan.transform.localScale = transform.localScale;
+            }
         }
         transform.position = startingPos;
-        transform.rotation.Set(0,0,0,0);
+        transform.rotation = startingRot;
+        if (transform.localScale.x < 0)
+        {
+            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

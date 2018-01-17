@@ -15,25 +15,32 @@ public class Balloon_Script : MonoBehaviour {
         helium = 0;
         helium_text.text = "Helium: " + helium;
         rbody.GetComponent<Rigidbody2D>();
-        rbody.gravityScale *= (float)(helium * 0.025);
+        //rbody.gravityScale *= (float)(helium * 0.25);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (rbody.gravityScale <= 2)
+        if (helium < 30)
         {
-            rbody.gravityScale += (float)(0.25 * Time.deltaTime);
-            if (helium >= 0)
+            if (helium <= 0)
             {
+                helium = 0;
+                helium_text.text = "Helium: " + helium;
+                if (rbody.gravityScale <= 1)
+                    rbody.gravityScale += (float)(0.5 * Time.deltaTime);
+            }
+            else
+            {
+                if (rbody.gravityScale <= 1)
+                    rbody.gravityScale += (float)(0.5 * Time.deltaTime);
                 helium -= (12 * Time.deltaTime);
                 helium_text.text = "Helium: " + System.Math.Truncate(helium * 100) / 100;
             }
         }
-        if (helium < 0)
+        else
         {
-            helium = 0;
+            helium -= (12 * Time.deltaTime);
             helium_text.text = "Helium: " + System.Math.Truncate(helium * 100) / 100;
         }
-
     }
 }

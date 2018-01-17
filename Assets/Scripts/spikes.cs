@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class spikes : MonoBehaviour {
+public class Spikes : MonoBehaviour {
 
     public static bool dead = false;
 

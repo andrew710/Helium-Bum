@@ -29,7 +29,7 @@ public class Fan_Mover : MonoBehaviour
         {
             currentTouchPosition = Input.mousePosition;
             if (Input.GetMouseButtonDown(0))
-                hasInput = true;
+                drag_or_pickup();
             else if (Input.GetMouseButtonUp(0))
                 hasInput = false;
 
@@ -51,12 +51,9 @@ public class Fan_Mover : MonoBehaviour
         if (draggingItem)
         {
             transform.position = inputPoint + touchOffset;
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
             {
-                if (transform.eulerAngles.z + 180 > 180)
-                    transform.Rotate(new Vector3(0, 0, -180));
-                else
-                    transform.Rotate(new Vector3(0, 0, 180));
+                transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
             }
         }
         else
@@ -66,9 +63,12 @@ public class Fan_Mover : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(inputPoint, Vector2.zero, 0f,layermask);
             if (hit.collider != null && GetComponent<Collider2D>() == hit.collider)
             {
+                hasInput = true;
                 draggingItem = true;
                 touchOffset = (Vector2)transform.position - inputPoint;
             }
+            else
+                hasInput = false;
         }
     }
 

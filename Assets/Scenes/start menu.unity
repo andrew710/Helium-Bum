@@ -112,8 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &34760399
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +186,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 34760399}
->>>>>>> 156456478d8e17c6b32e31cb64c4b1fadd89fa3d
 --- !u!1 &42295205
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,24 +212,16 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 42295205}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
-  m_LocalPosition: {x: 0, y: -36, z: 0}
-  m_LocalScale: {x: 1, y: 0.98750013, z: 1}
-=======
   m_LocalPosition: {x: 0, y: 28, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
-<<<<<<< HEAD
->>>>>>> 156456478d8e17c6b32e31cb64c4b1fadd89fa3d
-=======
->>>>>>> 156456478d8e17c6b32e31cb64c4b1fadd89fa3d
   m_Children:
   - {fileID: 499834727}
   m_Father: {fileID: 447095232}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -36}
+  m_AnchoredPosition: {x: 0, y: 28}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &42295207
@@ -413,18 +402,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 447095228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_LocalPosition: {x: 295, y: 166, z: 0}
-=======
   m_LocalPosition: {x: 475.5, y: 267.5, z: 0}
->>>>>>> 156456478d8e17c6b32e31cb64c4b1fadd89fa3d
-=======
-  m_LocalPosition: {x: 475.5, y: 267.5, z: 0}
->>>>>>> 156456478d8e17c6b32e31cb64c4b1fadd89fa3d
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 689052913}
+  - {fileID: 34760400}
   - {fileID: 42295206}
   m_Father: {fileID: 0}
   m_RootOrder: 1

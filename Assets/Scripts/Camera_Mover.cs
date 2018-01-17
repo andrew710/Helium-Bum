@@ -50,9 +50,6 @@ public class Camera_Mover : MonoBehaviour {
             if (transform.position.y >= ymax)
                 transform.position = new Vector3(transform.position.x, ymax, transform.position.z);
 
-            //print(transform.position.x);
-            //print(transform.position.y);
-            //print(transform.position.z);
         }
         else
         {

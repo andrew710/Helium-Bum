@@ -56,16 +56,16 @@ public class UI_Fan_Mover : MonoBehaviour
 
     void drag_or_pickup()
     {
-        
+
         Vector3 RawinputPoint = Camera.main.ScreenToWorldPoint(currentTouchPosition);
         Vector2 inputPoint = new Vector2(RawinputPoint.x, RawinputPoint.y);
         if (draggingItem)
         {
-                if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
-                {
-                    transform.localScale = new Vector3(transform.localScale.x*-1, transform.localScale.y, transform.localScale.z);
-                }
-                transform.position = inputPoint + touchOffset;
+            if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+            {
+                transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+            }
+            transform.position = inputPoint + touchOffset;
         }
         else
         {
@@ -92,7 +92,7 @@ public class UI_Fan_Mover : MonoBehaviour
             }
             else
                 hasInput = false;
-            
+
         }
     }
 
@@ -105,8 +105,9 @@ public class UI_Fan_Mover : MonoBehaviour
             Vector2 inputPoint = new Vector2(RawinputPoint.x, RawinputPoint.y);
 
             GameObject newFan = null;
-            switch (type) {
-                case 1: 
+            switch (type)
+            {
+                case 1:
                     {
                         if (Balloon_Script.currency - 10 >= 0)
                         {
@@ -136,7 +137,7 @@ public class UI_Fan_Mover : MonoBehaviour
                         }
                         break;
                     }
-        }
+            }
             if (newFan != null)
             {
                 newFan.transform.SetParent(fanHolder.GetComponent<Transform>());

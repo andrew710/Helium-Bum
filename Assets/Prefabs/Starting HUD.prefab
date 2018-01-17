@@ -288,8 +288,13 @@ BoxCollider2D:
     border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
     pivot: {x: 0.5, y: 0.5}
 <<<<<<< HEAD
+<<<<<<< HEAD
     oldSize: {x: 0.16, y: 0.16}
     newSize: {x: 0.16, y: 0.16}
+=======
+    oldSize: {x: 7, y: 7}
+    newSize: {x: 7, y: 7}
+>>>>>>> 156456478d8e17c6b32e31cb64c4b1fadd89fa3d
 =======
     oldSize: {x: 7, y: 7}
     newSize: {x: 7, y: 7}
@@ -689,7 +694,11 @@ SpriteRenderer:
   m_FlipY: 0
   m_DrawMode: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Size: {x: 8, y: 8}
+=======
+  m_Size: {x: 7, y: 7}
+>>>>>>> 156456478d8e17c6b32e31cb64c4b1fadd89fa3d
 =======
   m_Size: {x: 7, y: 7}
 >>>>>>> 156456478d8e17c6b32e31cb64c4b1fadd89fa3d
